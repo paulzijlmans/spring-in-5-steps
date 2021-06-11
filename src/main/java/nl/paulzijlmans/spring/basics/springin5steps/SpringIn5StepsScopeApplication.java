@@ -1,6 +1,6 @@
-package nl.paulzijlmans.springin5steps;
+package nl.paulzijlmans.spring.basics.springin5steps;
 
-import nl.paulzijlmans.springin5steps.scope.PersonDAO;
+import nl.paulzijlmans.spring.basics.springin5steps.scope.PersonDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -20,6 +20,7 @@ public class SpringIn5StepsScopeApplication {
         PersonDAO personDAO2 = applicationContext.getBean(PersonDAO.class);
 
         LOGGER.info("{}", personDAO);
+        LOGGER.info("{}", personDAO.getJdbcConnection());
         LOGGER.info("{}", personDAO.getJdbcConnection());
 
         LOGGER.info("{}", personDAO2);

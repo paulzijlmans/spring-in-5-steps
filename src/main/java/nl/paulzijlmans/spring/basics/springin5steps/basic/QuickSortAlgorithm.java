@@ -1,14 +1,14 @@
-package nl.paulzijlmans.springin5steps.basic;
+package nl.paulzijlmans.spring.basics.springin5steps.basic;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("bubble")
-public class BubbleSortAlgorithm implements SortAlgorithm {
+@Qualifier("quick")
+public class QuickSortAlgorithm implements SortAlgorithm {
 
     public int[] sort(int[] numbers) {
-        // Logic for Bubble Sort
+        // Logic for Quick Sort
         return numbers;
     }
 }

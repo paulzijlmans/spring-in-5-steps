@@ -1,6 +1,6 @@
-package nl.paulzijlmans.springin5steps;
+package nl.paulzijlmans.spring.basics.springin5steps;
 
-import nl.paulzijlmans.springin5steps.basic.BinarySearchImpl;
+import nl.paulzijlmans.spring.basics.springin5steps.basic.BinarySearchImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
