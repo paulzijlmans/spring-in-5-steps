@@ -13,7 +13,6 @@ public class SpringIn5StepsBasicApplication {
     // Where to search for beans? => No need, everything is in the same package
 
     public static void main(String[] args) {
-//        BinarySearchImpl binarySearch = new BinarySearchImpl(new QuickSortAlgorithm());
         // Application Context
         ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
         BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
