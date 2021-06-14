@@ -1,13 +1,13 @@
 package nl.paulzijlmans.spring.basics.springin5steps;
 
 import nl.paulzijlmans.spring.basics.springin5steps.xml.XmlPersonDAO;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@Configuration
-@ComponentScan
 public class SpringIn5StepsXmlContextApplication {
+
+    private static Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsXmlContextApplication.class);
 
     public static void main(String[] args) {
         // Application Context
@@ -15,8 +15,7 @@ public class SpringIn5StepsXmlContextApplication {
                      new ClassPathXmlApplicationContext("applicationContext.xml")) {
 
             XmlPersonDAO xmlPersonDAO = applicationContext.getBean(XmlPersonDAO.class);
-            System.out.println(xmlPersonDAO);
-            System.out.println(xmlPersonDAO.getXmlJdbcConnection());
+            LOGGER.info("{} {}", xmlPersonDAO, xmlPersonDAO.getXmlJdbcConnection());
         }
     }
 }
