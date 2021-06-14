@@ -1,11 +1,12 @@
 package nl.paulzijlmans.spring.basics.springin5steps;
 
 import nl.paulzijlmans.spring.basics.springin5steps.basic.BinarySearchImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringIn5StepsBasicApplication {
 
     // What are the beans?
@@ -14,11 +15,12 @@ public class SpringIn5StepsBasicApplication {
 
     public static void main(String[] args) {
         // Application Context
-        ApplicationContext applicationContext = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
-        BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
-        int result = binarySearch.binarySearch(new int[]{12, 4, 6}, 3);
+        try (AnnotationConfigApplicationContext applicationContext =
+                     new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class)) {
+            BinarySearchImpl binarySearch = applicationContext.getBean(BinarySearchImpl.class);
+            int result = binarySearch.binarySearch(new int[] {12, 4, 6}, 3);
 
-        System.out.println(result);
+            System.out.println(result);
+        }
     }
-
 }
